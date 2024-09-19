@@ -1,16 +1,9 @@
 {
   "root": true,
   "extends": [
-    "sonarqube",
     "plugin:sonarjs/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    // we are not using regular `next' or `next/web-vitals' because react hooks rules is conflicting with sonarqube
-    // at some point eslint merging rules stop worked as expected
-    // the only difference is exhaustive-deps is warn in sonarqube config
-    // https://github.com/SonarSource/eslint-config-sonarqube/blob/master/index.js#L229
-    // potentially we would like to get back to next/core-web-vitals, uncomment line below and check if we're still having conflicts
-    // "next/core-web-vitals"
     "plugin:@next/next/recommended"
   ],
   "plugins": ["sonarjs", "@typescript-eslint"],
@@ -49,22 +42,14 @@
     // this rule doesn't play well with server actions that must be async
     "require-await": "off",
     "react/no-unknown-property": [
-      2,
+      0,
       {
         "ignore": ["jsx", "global"]
       }
     ],
-    // TODO: remove once logger is added to the project
     "no-console": 0
   },
   "overrides": [
-    // temporary solution as files that contain mock-data may have duplicated values
-    {
-      "files": ["**/constants.*"],
-      "rules": {
-        "sonarjs/no-duplicate-string": "off"
-      }
-    },
     {
       "files": ["**/*.test.ts"],
       "rules": {
