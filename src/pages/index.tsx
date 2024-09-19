@@ -1,4 +1,9 @@
+import { axiosHttpService } from '../services/url-shortener-service/url-shortener-service';
+
 export default function Home() {
+  const res = axiosHttpService.get('/api/url');
+
+  console.log('res:', res);
   return (
     <div
       className={`grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20`}
