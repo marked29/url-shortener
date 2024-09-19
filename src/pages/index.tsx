@@ -1,15 +1,14 @@
-import Image from 'next/image';
-import localFont from 'next/font/local';
+import localFont from "next/font/local";
 
 const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
 });
 const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
+  src: "./fonts/GeistMonoVF.woff",
+  variable: "--font-geist-mono",
+  weight: "100 900",
 });
 
 export default function Home() {
@@ -21,7 +20,7 @@ export default function Home() {
         <h1 className="text-3xl">Url Shortener</h1>
       </header>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h1>Welcome to url shortener</h1>
+        <h1>Hello, world</h1>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
