@@ -1,3 +1,13 @@
+import {
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
+} from '@/src/components/ui/card';
+
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+
 export default function Home() {
   return (
     <div
@@ -7,7 +17,31 @@ export default function Home() {
         <h1 className="text-3xl">Url Shortener</h1>
       </header>
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        <h1>Hello, world</h1>
+        <Card className="w-[560px]">
+          <CardHeader className="text-center">
+            <CardTitle>Set your URL</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col gap-4">
+            <Input
+              type="text"
+              placeholder="Paste long url here"
+            />
+            <Button>Shorten Url</Button>
+            <CardHeader className="text-center">
+              <h2>Shortened URL's</h2>
+            </CardHeader>
+            <Card>
+              <CardContent className="flex gap-4">
+                <ul>
+                  <li>rflnrlfrnjl</li>
+                  <li>rflnrlfrnjl</li>
+                  <li>rflnrlfrnjl</li>
+                  <li>rflnrlfrnjl</li>
+                </ul>
+              </CardContent>
+            </Card>
+          </CardContent>
+        </Card>
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
         <a
