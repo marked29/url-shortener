@@ -24,6 +24,10 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .not-first-child:not(:first-child) {
+    margin-top: 1rem;
+  }
 }
 
 @layer base {
