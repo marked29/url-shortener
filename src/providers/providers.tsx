@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 import {
+  MutationCache,
+  QueryCache,
   QueryClient,
   QueryClientProvider,
-  QueryCache,
-  MutationCache,
-} from "@tanstack/react-query";
+} from '@tanstack/react-query';
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -16,12 +16,12 @@ interface ProvidersProps {
 const defaultQueryClient = new QueryClient({
   queryCache: new QueryCache({
     onError: (error) => {
-      console.error("Error occurred in Query:", error);
+      console.error('Error occurred in Query:', error);
     },
   }),
   mutationCache: new MutationCache({
     onError: (error) => {
-      console.error("Error occurred in Mutation:", error);
+      console.error('Error occurred in Mutation:', error);
     },
   }),
   defaultOptions: {
