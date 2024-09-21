@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 
 import { Card, CardContent } from '../ui/card';
@@ -7,7 +8,7 @@ type UrlProps = {
   originalUrl: string;
 };
 
-export const Url = ({ shortenedUrl, originalUrl }: UrlProps) => {
+export const Url = React.memo(({ shortenedUrl, originalUrl }: UrlProps) => {
   return (
     <li className="not-first-child">
       <Card className="flex flex-col">
@@ -20,4 +21,4 @@ export const Url = ({ shortenedUrl, originalUrl }: UrlProps) => {
       </Card>
     </li>
   );
-};
+});
