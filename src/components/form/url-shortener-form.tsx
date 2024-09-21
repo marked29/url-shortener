@@ -21,8 +21,7 @@ const urlSchema = z.object({
 
 type UrlFormFields = z.infer<typeof urlSchema>;
 
-export function UrlShortenerForm() {
-  // 1. Define your form.
+const UrlShortenerForm = () => {
   const form = useForm<UrlFormFields>({
     resolver: zodResolver(urlSchema),
     defaultValues: {
@@ -30,10 +29,7 @@ export function UrlShortenerForm() {
     },
   });
 
-  // 2. Define a submit handler.
   function onSubmit(values: UrlFormFields) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     alert(`You entered data: ${values}`);
   }
 
@@ -48,7 +44,7 @@ export function UrlShortenerForm() {
           name="originalUrl"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Long url</FormLabel>
+              <FormLabel>Original Url</FormLabel>
               <FormControl>
                 <Input
                   placeholder="Enter a long url"
@@ -63,9 +59,11 @@ export function UrlShortenerForm() {
           className="w-full"
           type="submit"
         >
-          Submit
+          Generate Short Url
         </Button>
       </form>
     </Form>
   );
-}
+};
+
+export default UrlShortenerForm;

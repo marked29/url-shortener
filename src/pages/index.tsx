@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import {
   Card,
   CardContent,
@@ -5,7 +6,8 @@ import {
   CardTitle,
 } from '@/src/components/ui/card';
 
-import { UrlShortenerForm } from '../components/form/url-shortener-form';
+import UrlShortenerForm from '../components/form/url-shortener-form';
+import UrlList from '../components/url-list/url-list';
 
 export default function Home() {
   return (
@@ -22,31 +24,19 @@ export default function Home() {
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
             <UrlShortenerForm />
-            <CardHeader className="text-center">
-              <h2>Shortened URLs list</h2>
-            </CardHeader>
-            <Card>
-              <CardContent className="flex gap-4">
-                <ul>
-                  <li>rflnrlfrnjl</li>
-                  <li>rflnrlfrnjl</li>
-                  <li>rflnrlfrnjl</li>
-                  <li>rflnrlfrnjl</li>
-                </ul>
-              </CardContent>
-            </Card>
+            <UrlList />
           </CardContent>
         </Card>
       </main>
       <footer className="row-start-3 flex flex-wrap items-center justify-center gap-6">
-        <a
+        <Link
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://github.com/marked29/url-shortener"
           target="_blank"
           rel="noopener noreferrer"
         >
           by Mark
-        </a>
+        </Link>
       </footer>
     </div>
   );
