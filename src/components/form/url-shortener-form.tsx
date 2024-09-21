@@ -21,17 +21,17 @@ const urlSchema = z.object({
 
 type UrlFormFields = z.infer<typeof urlSchema>;
 
-const UrlShortenerForm = () => {
+interface UrlFormProps {
+  onSubmit: (originalUrl: string | unknown) => void;
+}
+
+const UrlShortenerForm = ({ onSubmit }: UrlFormProps) => {
   const form = useForm<UrlFormFields>({
     resolver: zodResolver(urlSchema),
     defaultValues: {
       originalUrl: '',
     },
   });
-
-  function onSubmit(values: UrlFormFields) {
-    alert(`You entered data: ${values}`);
-  }
 
   return (
     <Form {...form}>

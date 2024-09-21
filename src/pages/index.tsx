@@ -8,6 +8,7 @@ import {
 
 import UrlShortenerForm from '../components/form/url-shortener-form';
 import UrlList from '../components/url-list/url-list';
+import { anyFIXME } from '../types/any-fixme';
 
 export default function Home() {
   return (
@@ -23,7 +24,11 @@ export default function Home() {
             <CardTitle>Set your URL</CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
-            <UrlShortenerForm />
+            <UrlShortenerForm
+              onSubmit={(data: anyFIXME) => {
+                console.log(`data: ${data}`);
+              }}
+            />
             <UrlList />
           </CardContent>
         </Card>
