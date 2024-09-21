@@ -5,8 +5,7 @@ import {
   CardTitle,
 } from '@/src/components/ui/card';
 
-import { Button } from '../components/ui/button';
-import { Input } from '../components/ui/input';
+import { UrlShortenerForm } from '../components/form/url-shortener-form';
 
 export default function Home() {
   return (
@@ -22,13 +21,9 @@ export default function Home() {
             <CardTitle>Set your URL</CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
-            <Input
-              type="text"
-              placeholder="Paste long url here"
-            />
-            <Button>Shorten Url</Button>
+            <UrlShortenerForm />
             <CardHeader className="text-center">
-              <h2>Shortened URL's</h2>
+              <h2>Shortened URLs list</h2>
             </CardHeader>
             <Card>
               <CardContent className="flex gap-4">
