@@ -42,9 +42,11 @@ export default function Home() {
           <CardContent className="flex flex-col gap-4">
             <UrlShortenerForm onSubmit={handleUrlSubmit} />
             {urlsError ? (
-              <p className="mt-4 text-red-500">Error loading URLs</p>
+              <p className="mt-4 text-center text-red-500">
+                Error loading URLs
+              </p>
             ) : urls.length === 0 ? (
-              <p>empty list</p>
+              <p className="text-center">empty list</p>
             ) : (
               <MemoizedUrlsList urls={urls} />
             )}
