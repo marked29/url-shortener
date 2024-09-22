@@ -41,7 +41,6 @@ export default function Home() {
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
             <UrlShortenerForm onSubmit={handleUrlSubmit} />
-            {/* {urlsLoading ? <p>Urls are lodaing</p> : <UrlList urls={urls} />} */}
             {urlsError ? (
               <p className="mt-4 text-red-500">Error loading URLs</p>
             ) : urls.length === 0 ? (
