@@ -19,111 +19,14 @@ const UrlList = ({ urls }: UrlListProps) => {
       <Card>
         <CardContent className="flex h-[250px] gap-4 overflow-y-auto">
           <ul className="mt-4 w-full flex-col overflow-y-auto">
-            {urls.reverse().map((url) => {
-              console.log('url:', url);
+            {urls.reverse().map(({ originalUrl, shortUrl }) => {
               return (
                 <Url
-                  shortenedUrl={'hello'}
-                  originalUrl="zazazaazza"
+                  shortenedUrl={shortUrl}
+                  originalUrl={originalUrl}
                 />
               );
             })}
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
-            <Url
-              shortenedUrl="zaza"
-              originalUrl="zazazaazza"
-            />
           </ul>
         </CardContent>
       </Card>

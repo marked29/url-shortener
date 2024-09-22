@@ -13,10 +13,22 @@ export const Url = React.memo(({ shortenedUrl, originalUrl }: UrlProps) => {
     <li className="not-first-child">
       <Card className="flex flex-col">
         <CardContent className="p-2">
-          <p>Short Url:</p>
-          <Link href="#">{shortenedUrl}</Link>
-          <p>Original Url:</p>
-          <Link href="#">{originalUrl}</Link>
+          <p className="text-[#5D76CB]">Short Url:</p>
+          <Link
+            target="_blank"
+            rel="noopener noreferrer"
+            href={`${window.location.origin}/${shortenedUrl}`}
+          >
+            {`${window.location.origin}/${shortenedUrl}`}
+          </Link>
+          <p className="text-[#FF6D2B]">Original Url:</p>
+          <Link
+            href={originalUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {originalUrl}
+          </Link>
         </CardContent>
       </Card>
     </li>

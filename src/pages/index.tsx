@@ -1,3 +1,4 @@
+import React from 'react';
 import Link from 'next/link';
 import {
   Card,
@@ -9,6 +10,8 @@ import {
 import UrlShortenerForm from '../components/form/url-shortener-form';
 import UrlList from '../components/url-list/url-list';
 import { useUrlShortener } from '../hooks/useUrlShortener';
+
+const MemoizedUrlsList = React.memo(UrlList);
 
 export default function Home() {
   const {
@@ -40,9 +43,9 @@ export default function Home() {
             {urlsError ? (
               <p className="mt-4 text-red-500">Error loading URLs</p>
             ) : urls.length === 0 ? (
-              <p>urls</p>
+              <p>empty list</p>
             ) : (
-              <UrlList urls={urls} />
+              <MemoizedUrlsList urls={urls} />
             )}
           </CardContent>
         </Card>

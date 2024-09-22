@@ -31,7 +31,7 @@ export const getAllUrls = async <T>(): Promise<anyFIXME> => {
     const response: AxiosResponse<T> = await axiosHttpService.get(
       ENDPOINTS.getAllUrls,
     );
-    return response.data;
+    return response;
   } catch (error) {
     handleError(error);
   }
@@ -44,7 +44,7 @@ export const shortenUrl = async <T>(
     const axiosHttpService = createHttpService(axiosInstance);
     const response: AxiosResponse<T> = await axiosHttpService.post(
       ENDPOINTS.shortenUrl,
-      JSON.stringify({ originalUrl }),
+      JSON.stringify(originalUrl),
     );
     return response.data;
   } catch (error) {
