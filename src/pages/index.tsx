@@ -35,7 +35,7 @@ export default function Home() {
         </h1>
       </header>
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
-        <Card className="w-[560px]">
+        <Card className="w-[90vw] sm:w-[560px]">
           <CardHeader className="text-center">
             <CardTitle>Set your URL</CardTitle>
           </CardHeader>
