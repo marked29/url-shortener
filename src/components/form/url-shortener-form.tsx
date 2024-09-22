@@ -1,6 +1,7 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import { anyFIXME } from '@/src/types/any-fixme';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
@@ -22,7 +23,7 @@ const urlSchema = z.object({
 type UrlFormFields = z.infer<typeof urlSchema>;
 
 interface UrlFormProps {
-  onSubmit: (originalUrl: string | unknown) => void;
+  onSubmit: (originalUrl: anyFIXME) => void;
 }
 
 const UrlShortenerForm = ({ onSubmit }: UrlFormProps) => {

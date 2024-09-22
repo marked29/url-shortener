@@ -8,9 +8,20 @@ import {
 
 import UrlShortenerForm from '../components/form/url-shortener-form';
 import UrlList from '../components/url-list/url-list';
-import { anyFIXME } from '../types/any-fixme';
+import { useUrlShortener } from '../hooks/useUrlShortener';
 
 export default function Home() {
+  const {
+    // shortUrl,
+    // originalUrl,
+    urls,
+    // urlsLoading,
+    urlsError,
+    handleUrlSubmit,
+    // notification,
+    // handleNotificationClose,
+  } = useUrlShortener();
+
   return (
     <div
       className={`grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20`}
@@ -24,12 +35,15 @@ export default function Home() {
             <CardTitle>Set your URL</CardTitle>
           </CardHeader>
           <CardContent className="flex flex-col gap-4">
-            <UrlShortenerForm
-              onSubmit={(data: anyFIXME) => {
-                console.log(`data: ${data}`);
-              }}
-            />
-            <UrlList />
+            <UrlShortenerForm onSubmit={handleUrlSubmit} />
+            {/* {urlsLoading ? <p>Urls are lodaing</p> : <UrlList urls={urls} />} */}
+            {urlsError ? (
+              <p className="mt-4 text-red-500">Error loading URLs</p>
+            ) : urls.length === 0 ? (
+              <p>urls</p>
+            ) : (
+              <UrlList urls={urls} />
+            )}
           </CardContent>
         </Card>
       </main>

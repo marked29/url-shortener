@@ -25,7 +25,7 @@ const handleError = (error: anyFIXME): never => {
   throw error;
 };
 
-export const getAllUrlsByMark = async <T>(): Promise<anyFIXME> => {
+export const getAllUrls = async <T>(): Promise<anyFIXME> => {
   try {
     const axiosHttpService = createHttpService(axiosInstance);
     const response: AxiosResponse<T> = await axiosHttpService.get(
