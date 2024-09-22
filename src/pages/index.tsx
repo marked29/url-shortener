@@ -30,7 +30,9 @@ export default function Home() {
       className={`grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20`}
     >
       <header>
-        <h1 className="text-3xl">Url Shortener</h1>
+        <h1 className="text-3xl text-[#FF6D2B]">
+          <span className="text-[#5D76CB]">Url</span> Shortener
+        </h1>
       </header>
       <main className="row-start-2 flex flex-col items-center gap-8 sm:items-start">
         <Card className="w-[560px]">
