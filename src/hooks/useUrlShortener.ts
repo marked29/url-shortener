@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { toast } from 'react-toastify';
 import {
   getAllUrls,
   shortenUrl,
@@ -12,11 +12,6 @@ import {
 
 export function useUrlShortener() {
   const queryClient = useQueryClient();
-  const [notification, setNotification] = useState({
-    open: false,
-    message: '',
-    severity: 'success' as 'success' | 'info' | 'warning' | 'error',
-  });
 
   const {
     data: urls = [],
@@ -38,28 +33,16 @@ export function useUrlShortener() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries(['urls'] as InvalidateQueryFilters);
-      setNotification({
-        open: true,
-        message: 'URL successfully shortened!',
-        severity: 'success',
-      });
+      toast('Url has been succesfully shortened');
     },
     onError: (error) => {
       console.error('Failed to shorten URL:', error.message);
-      setNotification({
-        open: true,
-        message: `Error: ${error.message}`,
-        severity: 'error',
-      });
+      toast(`Failed to shorten URL: ${error.message}`, { type: 'error' });
     },
   });
 
   const handleUrlSubmit = (originalUrl: string) => {
     mutation.mutate(originalUrl);
-  };
-
-  const handleNotificationClose = () => {
-    setNotification((prev) => ({ ...prev, open: false }));
   };
 
   return {
@@ -71,7 +54,5 @@ export function useUrlShortener() {
     urlsLoading,
     urlsError,
     handleUrlSubmit,
-    notification,
-    handleNotificationClose,
   };
 }

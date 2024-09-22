@@ -21,8 +21,6 @@ export default function Home() {
     // urlsLoading,
     urlsError,
     handleUrlSubmit,
-    // notification,
-    // handleNotificationClose,
   } = useUrlShortener();
 
   return (
