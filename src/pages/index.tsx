@@ -14,18 +14,11 @@ import { useUrlShortener } from '../hooks/useUrlShortener';
 const MemoizedUrlsList = React.memo(UrlList);
 
 export default function Home() {
-  const {
-    // shortUrl,
-    // originalUrl,
-    urls,
-    // urlsLoading,
-    urlsError,
-    handleUrlSubmit,
-  } = useUrlShortener();
+  const { urls, urlsError, handleUrlSubmit } = useUrlShortener();
 
   return (
     <div
-      className={`grid min-h-screen grid-rows-[20px_1fr_20px] items-center justify-items-center gap-16 p-8 pb-20 sm:p-20`}
+      className={`flex min-h-screen flex-col items-center justify-center gap-20 p-8`}
     >
       <header>
         <h1 className="text-3xl text-[#FF6D2B]">

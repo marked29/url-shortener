@@ -15,6 +15,7 @@ export const Url = React.memo(({ shortenedUrl, originalUrl }: UrlProps) => {
         <CardContent className="p-2">
           <p className="text-[#5D76CB]">Short Url:</p>
           <Link
+            className="break-all"
             target="_blank"
             rel="noopener noreferrer"
             href={`${window.location.origin}/${shortenedUrl}`}
@@ -23,6 +24,7 @@ export const Url = React.memo(({ shortenedUrl, originalUrl }: UrlProps) => {
           </Link>
           <p className="text-[#FF6D2B]">Original Url:</p>
           <Link
+            className="break-all"
             href={originalUrl}
             target="_blank"
             rel="noopener noreferrer"
